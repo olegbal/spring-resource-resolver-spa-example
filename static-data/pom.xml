@@ -9,7 +9,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>static-data</artifactId>
-    <name>static-content</name>
     <build>
         <resources>
             <resource>
