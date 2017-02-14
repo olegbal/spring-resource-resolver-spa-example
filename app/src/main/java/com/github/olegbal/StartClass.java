@@ -4,8 +4,6 @@ package com.github.olegbal;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.FileOutputStream;
-
 @SpringBootApplication
 public class StartClass {
 
@@ -14,8 +12,11 @@ public class StartClass {
     public static void main(String[] args) throws Exception {
 
         PathOperator.getJarContainingFolder(StartClass.class);
-
-        new ProcessBuilder("jar", "xf", Paths.executingPath + jarName, "resources/").start();
+        if (System.getProperty("os.name").contains("Windows")) {
+            JarExtractor.extractJarResources(Paths.executingPath+jarName,Paths.executingPath);
+        } else {
+            new ProcessBuilder("jar", "xf", Paths.executingPath + jarName, "resources/").start();
+        }
         SpringApplication.run(StartClass.class, args);
     }
 
