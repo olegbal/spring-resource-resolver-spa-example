@@ -13,11 +13,10 @@ public class StartClass {
 
         PathOperator.getJarContainingFolder(StartClass.class);
         if (System.getProperty("os.name").contains("Windows")) {
-            JarExtractor.extractJarResources(Paths.executingPath+jarName,Paths.executingPath);
+            new ProcessBuilder(System.getenv("JAVA_HOME")+"\\bin\\jar.exe", "-xf", Paths.executingPath + jarName, "resources/").start();
         } else {
             new ProcessBuilder("jar", "xf", Paths.executingPath + jarName, "resources/").start();
         }
         SpringApplication.run(StartClass.class, args);
     }
-
 }

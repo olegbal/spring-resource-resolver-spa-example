@@ -1,11 +1,13 @@
 package com.github.olegbal;
 
+import java.io.IOException;
 import java.net.URLDecoder;
 
 public class PathOperator {
-    public static String parseString(String decodedPath) {
+    public static String parseString(String decodedPath) throws IOException {
         StringBuilder stringBuilder = new StringBuilder(decodedPath);
-        stringBuilder.delete(0, 5);
+        if (decodedPath.contains("file:/"))
+            stringBuilder.delete(0, 5);
         int counter = 0;
         for (int i = stringBuilder.length() - 1; i > -1; i--) {
             if (stringBuilder.charAt(i) == '\\' || stringBuilder.charAt(i) == '/') {
