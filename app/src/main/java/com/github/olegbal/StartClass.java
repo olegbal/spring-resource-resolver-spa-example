@@ -4,6 +4,8 @@ package com.github.olegbal;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.File;
+
 @SpringBootApplication
 public class StartClass {
 
@@ -13,9 +15,13 @@ public class StartClass {
 
         PathOperator.getJarContainingFolder(StartClass.class);
         if (System.getProperty("os.name").contains("Windows")) {
-            new ProcessBuilder(System.getenv("JAVA_HOME")+"\\bin\\jar.exe", "-xf", Paths.executingPath + jarName, "resources/").start();
+            ProcessBuilder pb = new ProcessBuilder(System.getenv("JAVA_HOME") + "\\bin\\jar.exe", "-xf", Paths.executingPath + jarName, "resources/");
+            pb.directory(new File(Paths.executingPath));
+            pb.start();
         } else {
-            new ProcessBuilder("jar", "xf", Paths.executingPath + jarName, "resources/").start();
+            ProcessBuilder pb = new ProcessBuilder("jar", "xf", Paths.executingPath + jarName, "resources/");
+            pb.directory(new File(Paths.executingPath));
+            pb.start();
         }
         SpringApplication.run(StartClass.class, args);
     }
