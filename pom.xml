@@ -11,8 +11,8 @@
         <module>jar</module>
         <module>react-client</module>
         <module>angular2-client</module>
-        <module>app</module>
         <module>static-data</module>
+        <module>app</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -25,29 +25,7 @@
     </properties>
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <!-- here the phase you need -->
-                        <phase>install</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${basedir}/</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}/static-data/target/</directory>
-                                    <includes>*.jar</includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
     </build>
 </project>

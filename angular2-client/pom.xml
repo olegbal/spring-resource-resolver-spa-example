@@ -34,11 +34,12 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${session.executionRootDirectory}/static-data/static/angular
+                            <outputDirectory>${session.executionRootDirectory}/static-data/static/angular/
                             </outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>${basedir}/build</directory>
+                                    <includes>*.css,*.js,*.html,*.ico</includes>
                                 </resource>
                             </resources>
                         </configuration>
