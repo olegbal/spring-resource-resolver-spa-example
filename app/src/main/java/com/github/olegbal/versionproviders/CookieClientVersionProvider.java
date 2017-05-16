@@ -1,5 +1,6 @@
-package com.github.olegbal;
+package com.github.olegbal.versionproviders;
 
+import com.github.olegbal.enums.ClientResourceLocationList;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.core.io.Resource;

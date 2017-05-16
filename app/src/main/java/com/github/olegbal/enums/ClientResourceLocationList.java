@@ -1,4 +1,4 @@
-package com.github.olegbal;
+package com.github.olegbal.enums;
 
 public enum ClientResourceLocationList {
     angular("classpath:/static/angular/", 0),

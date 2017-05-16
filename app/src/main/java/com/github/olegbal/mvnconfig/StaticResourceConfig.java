@@ -1,5 +1,7 @@
-package com.github.olegbal;
+package com.github.olegbal.mvnconfig;
 
+import com.github.olegbal.resource_resolvers.CustomResourceResolver;
+import com.github.olegbal.enums.ClientResourceLocationList;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -25,5 +27,4 @@ public class StaticResourceConfig extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index.html");
     }
-
 }

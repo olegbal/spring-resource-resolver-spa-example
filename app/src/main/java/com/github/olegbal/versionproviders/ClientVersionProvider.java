@@ -1,4 +1,4 @@
-package com.github.olegbal;
+package com.github.olegbal.versionproviders;
 
 import org.springframework.core.io.Resource;
 

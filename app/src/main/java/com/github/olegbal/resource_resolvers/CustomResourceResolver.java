@@ -1,5 +1,7 @@
-package com.github.olegbal;
+package com.github.olegbal.resource_resolvers;
 
+import com.github.olegbal.versionproviders.ClientVersionProvider;
+import com.github.olegbal.versionproviders.CookieClientVersionProvider;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.core.io.Resource;
