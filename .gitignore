@@ -2,3 +2,4 @@
 /.idea/
 *.iml
 /angular2-client/angularapp/node_modules/
+/app/src/main/resources/static/
