@@ -1,25 +1,29 @@
 package com.github.olegbal;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-
 @Configuration
 public class StaticResourceConfig extends WebMvcConfigurerAdapter {
+
+    private static final String[] resource_locations = {
+            ClientResourceLocationList.angular.path,
+            ClientResourceLocationList.react.path
+    };
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-                .addResourceHandler("/**")
-                .addResourceLocations("file:///" + Paths.executingPath + "resources/");
+        registry.addResourceHandler("/**").
+                addResourceLocations(resource_locations).
+                setCachePeriod(0).resourceChain(false).
+                addResolver(new CustomResourceResolver());
     }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/index.html");
+        registry.addViewController("/").setViewName("index.html");
     }
 
 }
-
