@@ -14,11 +14,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>multi-clients-app</groupId>
-            <artifactId>jar</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
     <artifactId>angular2-client</artifactId>
     <build>
@@ -34,7 +29,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${session.executionRootDirectory}/static-data/static/angular/
+                            <outputDirectory>${session.executionRootDirectory}/app/src/main/resources/static/angular/
                             </outputDirectory>
                             <resources>
                                 <resource>
