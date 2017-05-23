@@ -26,7 +26,7 @@ GET /changeclient/react/
 
 ## Example
 
-application deployed at heroku 
+application deployed on heroku 
 
 ```
 staticresolver.herokuapp.com
