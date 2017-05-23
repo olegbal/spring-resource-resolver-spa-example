@@ -35,7 +35,6 @@
                             <resources>
                                 <resource>
                                     <directory>${basedir}/build</directory>
-                                    <includes>*.css,*.js,*.html,*.ico</includes>
                                 </resource>
                             </resources>
                         </configuration>
