@@ -23,3 +23,11 @@ GET /changeclient/angular/
 * To enable react resources use 
 
 GET /changeclient/react/
+
+## Example
+
+application deployed at heroku 
+
+```
+staticresolver.herokuapp.com
+```
