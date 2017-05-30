@@ -25,11 +25,11 @@ public class CustomResourceResolver extends PathResourceResolver {
         try {
             logger.info("Trying to get resource " + s);
             resource = getResource(s, versionProvider.provideClient());
-        } catch (IOException e) {
-            logger.info("Unable to get resource " + s + "by provided path");
+            logger.info("Resolving resource " + resource.getDescription().split(" ")[3]);
+        } catch (IOException | NullPointerException e) {
+            logger.info("Unable to get resource " + s + " by provided path");
             return null;
         }
-        logger.info("Resolving resource " + resource.getDescription().split(" ")[3]);
 
         return resource;
     }
